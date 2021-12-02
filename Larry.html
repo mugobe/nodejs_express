@@ -1,0 +1,251 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <title>Supplier Return Order</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            -webkit-print-color-adjust: exact;
+        }
+
+        table {
+            table-layout: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        th {
+            background-color: #000000;
+            color: #fff;
+        }
+
+        .td {
+            border: solid;
+            border-color: #000000;
+            border-width: 1px;
+        }
+
+        div {
+            width: 740px;
+            float: left
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        .bg-black {
+            background-color: #000000;
+            color: #fff;
+        }
+
+        .align {
+            text-align: right;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .detail {
+            font-size: 12px;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            margin: 0 auto -142px;
+            /* the bottom margin is the negative value of the footer's height */
+        }
+
+        .font-14 {
+            font-size: 14px;
+        }
+
+        @page {
+            size: A4;
+            margin: 10 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div style="width:1000px;"> <br><br>
+            <table width="1000px">
+                <tr>
+                    <td width="600px"><img width="170" height="30"
+                            src="https://oms.jumia.ug/assets/documentsFiles/logo_jumia1.png"
+                            style="vertical-align:middle;float:left" /></td>
+                    <td class="font-14"><b>Exchange/Return Form</b></td>
+                </tr>
+                <tr>
+                    <td>Jumia (Uganda)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5th Street, Industrial Area</td>
+                </tr>
+                <tr>
+                    <td>Kampala, Uganda</td>
+                </tr>
+                <tr>
+                    <td>Tel : 0800222888</td>
+                </tr>
+                <tr>
+                    <td>Email : customer@jumia.ug</td>
+                    <td><b>Date:</b>&nbsp;{$RO_DATE}</td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td><b>PO Number:</b>&nbsp;{$RO_NO} <br /><img
+                            src="https://www.barcodesinc.com/generator/image.php?code={$RO_NO}&style=196&type=C128B&width=270&height=70&xres=1&font=3"
+                            alt="Package Number" border="0"> </td>
+                </tr>
+                <tr> </tr>
+                <tr> </tr>
+            </table>
+        </div>
+        <div style="width:1000px;"> <br /> <br />
+            <table width="1000px">
+                <tr>
+                    <td width="90px"><b>Brand</b></td>
+                    <td>:</td>
+                </tr>
+                <tr>
+                    <td><b>Company</b></td>
+                    <td>:&nbsp;{$RO_SUPPLIER_NAME} </td>
+                </tr>
+                <tr>
+                    <td><b>Contact Person</b></td>
+                    <td>:&nbsp;{$RO_SUPPLIER_CONTACT_NAME} </td>
+                </tr>
+                <tr>
+                    <td><b>Address</b></td>
+                    <td>:&nbsp;{$RO_SUPPLIER_ADDRESS}</td>
+                </tr>
+            </table>
+        </div>
+        <div style="width:1000px;"> <br />
+            <table width="1000px">
+                <tr>
+                    <td width="90px"><b>Tel</b></td>
+                    <td>:&nbsp;{$RO_SUPPLIER_CONTACT_PHONE}</td>
+                </tr>
+                <tr>
+                    <td><b>E-mail</b></td>
+                    <td>:&nbsp;{$RO_SUPPLIER_CONTACT_EMAIL} </td>
+                </tr>
+            </table>
+        </div>
+        <div style="width:1000px;"> <br> <br>
+            <table width="1000px"
+                style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                <tbody>
+                    <tr>
+                        <th width="15%"
+                            style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <strong>Supplier SKU</strong></th>
+                        <th width="29%"
+                            style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <strong>SKU</strong></th>
+                        <th width="25%"
+                            style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <strong>Description</strong></th>
+                        <th width="10%"
+                            style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <strong>Size</strong></th>
+                        <th width="23%"
+                            style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <strong>Color</strong></th>
+                        <th width="10%"
+                            style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <strong>Exchange QTY</strong></th>
+                        <th width="13%"
+                            style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <strong>Cost</strong></th>
+                        <th width="9%"
+                            style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <strong>Return QTY</strong></th>
+                        <th width="23%"
+                            style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <strong>Return Reason</strong></th>
+                    </tr> {foreach from=$RO_ITEMS item=EACHITEM} <div style="display:none">
+                        {$rqtotal[]=$EACHITEM.RO_ITEM_QTY}</div>
+                    <tr>
+                        <td style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <center>{$EACHITEM.RO_ITEM_SUPPLIER_SKU}</center>
+                        </td>
+                        <td style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <center>{$EACHITEM.RO_ITEM_SKU}</center>
+                        </td>
+                        <td style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <center>{$EACHITEM.RO_ITEM_NAME}</center>
+                        </td>
+                        <td style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <center>{$EACHITEM.RO_ITEM_SIZE}</center>
+                        </td>
+                        <td style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <center>{$EACHITEM.RO_ITEM_COLOR}</center>
+                        </td>
+                        <td style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <center></center>
+                        </td>
+                        <td style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <center></center>
+                        </td>
+                        <td style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <center>{$EACHITEM.RO_ITEM_QTY}</center>
+                        </td>
+                        <td style="border-style:solid;border-color:#000000;border-width:1px;border-collapse:collapse;">
+                            <center></center>
+                        </td>
+                    </tr> {/foreach} <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bg-black" style="font-weight:bold;font-size:13px;"><strong>
+                                <center>Total</center>
+                            </strong></td>
+                        <td class="bg-black" style="font-weight:bold;font-size:13px;">
+                            <center></center>
+                        </td>
+                        <td class="bg-black" style="font-weight:bold;font-size:13px;">
+                            <center></center>
+                        </td>
+                        <td class="bg-black" style="font-weight:bold;font-size:13px;">
+                            <center>{$rqtotal|@array_sum}</center>
+                        </td>
+                        <td>{$totalrow|@array_sum}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="width:1000px"> <br />
+            <p>This is to confirm that supplier has recieved the above return merchandises already.</p>
+            <table width="30%"> <br /> <br /> <br /> <br />
+                <tr>
+                    <td>
+                        <center>_____________________</center>
+                        <center> Receiver </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td> <br />
+                        <center> Date _____/ _____/ _____</center>
+                    </td>
+                </tr>
+            </table>
+        </div>
+</body>
+
+</html>
